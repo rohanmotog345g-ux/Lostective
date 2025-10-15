@@ -1,0 +1,178 @@
+/* General Layout */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ------------------ Sidebar ------------------ */
+.sidebar {
+  width: 260px;
+  background-color: #ffffff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e9ecef;
+  flex-shrink: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+.sidebar-header span { font-size: 2rem; }
+.sidebar-header h1 { font-size: 1.5rem; color: #333; }
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+.nav-link:hover {
+  background-color: #f1f3f5;
+}
+.nav-link.active {
+  background-color: #e8e7ff;
+  color: #5a4fcf;
+}
+.nav-link span { font-size: 1.2rem; }
+
+.sidebar-footer {
+  margin-top: auto;
+  background-color: #f1f3f5;
+  padding: 16px;
+  border-radius: 8px;
+}
+.sidebar-footer h4 { margin: 0 0 8px 0; }
+.sidebar-footer p { font-size: 0.85rem; color: #6c757d; line-height: 1.4;}
+
+/* ------------------ Main Content ------------------ */
+.main-content {
+  flex-grow: 1;
+  padding: 32px;
+  overflow-y: auto;
+}
+
+.main-header {
+  margin-bottom: 32px;
+}
+.main-header h2 { font-size: 2rem; color: #212529; margin: 0; }
+.main-header p { font-size: 1rem; color: #6c757d; }
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+.stat-icon-wrapper {
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+.stat-info { margin-bottom: 16px; }
+.stat-info p { margin: 0; color: #6c757d; }
+.stat-info span { font-size: 2rem; font-weight: 600; color: #212529; }
+.stat-card a { font-size: 0.9rem; text-decoration: none; color: #495057; font-weight: 500; }
+
+/* Stat Card Colors */
+.stat-card.lost .stat-icon-wrapper { background-color: #ffe8e8; }
+.stat-card.found .stat-icon-wrapper { background-color: #e4f9e8; }
+.stat-card.reunited .stat-icon-wrapper { background-color: #e8e7ff; }
+.stat-card.success .stat-icon-wrapper { background-color: #fff4d9; }
+
+
+/* ------------------ Main Dashboard Columns ------------------ */
+.dashboard-columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* Recent Activity */
+.recent-activity-card {
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+.recent-activity-card h3 { margin: 0 0 20px 0; }
+
+.activity-list { display: flex; flex-direction: column; gap: 16px; }
+
+.activity-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #f1f3f5;
+  padding-bottom: 16px;
+}
+.activity-item:last-child { border-bottom: none; padding-bottom: 0; }
+.activity-icon { font-size: 1.5rem; background-color: #f1f3f5; padding: 10px; border-radius: 8px; }
+.activity-details h4 { margin: 0; font-size: 1rem; }
+.activity-details p { margin: 0; font-size: 0.9rem; color: #6c757d; }
+
+.category-tag {
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fff;
+}
+.category-tag.electronics { background-color: #5a4fcf; }
+.category-tag.keys { background-color: #ff9a3c; }
+.category-tag.books { background-color: #3d8bfd; }
+
+/* CTA Cards */
+.cta-cards-wrapper { display: flex; flex-direction: column; gap: 24px; }
+
+.cta-card {
+  padding: 24px;
+  border-radius: 12px;
+  color: #fff;
+}
+.cta-card h4 { margin: 0 0 8px 0; font-size: 1.2rem; }
+.cta-card p { margin: 0 0 16px 0; line-height: 1.5; opacity: 0.9; }
+.cta-card ul { padding-left: 20px; margin-bottom: 20px; }
+.cta-card li { margin-bottom: 8px; }
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition: background-color 0.2s;
+}
+.cta-button:hover { background-color: rgba(255, 255, 255, 0.3); }
+
+.cta-card.cta-lost { background-color: #7b61ff; }
+.cta-card.cta-found { background-color: #1ccb6a; }
